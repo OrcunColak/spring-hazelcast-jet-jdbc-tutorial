@@ -29,6 +29,17 @@ public class HazelcastConfig {
         return config;
     }
 
+    // See https://stackoverflow.com/questions/79245613/hazelcast-predicates-api-with-multiple-filters
+    // This is another way of creating Config class
+    // @Bean
+    // HazelcastConfigCustomizer predicatesParallelExecutor() {
+    //     return hzInstanceConfig -> {
+    //         hzInstanceConfig.setProperty(ClusterProperty.QUERY_PREDICATE_PARALLEL_EVALUATION.getName(), "true");
+    //         hzInstanceConfig.setProperty(ClusterProperty.CLIENT_ENGINE_THREAD_COUNT.getName(), "50");
+    //         hzInstanceConfig.setProperty(ClusterProperty.CLIENT_ENGINE_QUERY_THREAD_COUNT.getName(), "50");
+    //     };
+    // }
+
     @Bean
     public SpringManagedContext springManagedContext() {
         return new SpringManagedContext();
